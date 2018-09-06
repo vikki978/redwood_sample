@@ -57,7 +57,9 @@ class Browser{
           service = new ChromeDriverService.Builder().usingPort(9518).usingDriverExecutable(chromedriver).build()
       }
       else{
-        service = new ChromeDriverService.Builder().usingPort(9518).usingDriverExecutable(new File("chromedriver.exe")).build()
+          System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe")
+        service = new ChromeDriverService.Builder().usingPort(9518).build()
+          
       }
       service.start()
       Driver = new RemoteWebDriver(service.getUrl(),DesiredCapabilities.chrome())
