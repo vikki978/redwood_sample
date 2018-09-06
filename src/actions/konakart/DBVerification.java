@@ -10,6 +10,11 @@ import java.util.*;
 
 class DBVerification{
     public void run(HashMap<String, Object> params)  throws ClassNotFoundException, SQLException{
+        System.out.println("We are now inside ");
+       for(String keys:params.keySet())
+	      {
+	    	  System.out.println(keys+":  "+params.get(keys).toString());
+	      }
         Connection conn;
         String dbURL = "jdbc:mysql://"+ params.get("host").toString() +":"+  params.get("port").toString();
 	        Class.forName("com.mysql.jdbc.Driver");
