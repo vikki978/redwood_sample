@@ -10,6 +10,8 @@ import org.openqa.selenium.ie.InternetExplorerDriverService
 import org.openqa.selenium.remote.RemoteWebDriver
 import org.openqa.selenium.remote.DesiredCapabilities
 
+import org.openqa.selenium.JavascriptExecutor
+
 class Browser{
 
 
@@ -84,8 +86,12 @@ class Browser{
       }
       
     }
-    if (params."Browser Type" == "Chrome"){Driver.manage().window().maximize()}
+    if (params."Browser Type" == "Chrome")
+      {
+          Driver.manage().window().maximize()
+      }
     Driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS)
+      ((JavascriptExecutor) Driver).executeScript("window.focus();")
     MainWinHandle = Driver.getWindowHandle()   
     
   }
