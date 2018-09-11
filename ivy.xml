@@ -8,5 +8,6 @@
         <dependency org="net.jcip" name="jcip-annotations" rev="latest.release"/>
         <dependency org="org.seleniumhq.selenium" name="selenium-server" rev="3.4.0"/>
         <dependency org="org.seleniumhq.selenium" name="selenium-support" rev="3.4.0"/>
+        <dependency org="io.rest-assured" name="rest-assured" rev="3.1.1"/>
     </dependencies>
 </ivy-module>
