@@ -31,6 +31,7 @@ class DBVerification{
                 }
 			}
         }
+        System.out.println("DB Data: "+actualValue);
         assertEquals(params.get("uiValue"),actualValue);
 		rs.close();
 		conn.close();
