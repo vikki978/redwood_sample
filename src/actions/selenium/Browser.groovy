@@ -3,6 +3,7 @@ package actions.selenium;
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.ie.InternetExplorerDriver
 import org.openqa.selenium.firefox.FirefoxDriver
+import org.openqa.selenium.firefox.FirefoxProfile
 import org.openqa.selenium.ie.InternetExplorerDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeDriverService
@@ -36,8 +37,11 @@ class Browser{
       else{
 		System.setProperty("webdriver.gecko.driver", "geckodriver.exe")
       }
-
-      Driver = new FirefoxDriver()
+	  FirefoxProfile profile = new FirefoxProfile()
+	  profile.setAcceptUntrustedCertificates(true)
+	  DesiredCapabilities caps = DesiredCapabilities.firefox()
+      caps.setCapability(FirefoxDriver.PROFILE, profile)
+      Driver = new FirefoxDriver(caps)
     }
     else if (params."Browser Type" == "Chrome"){
       def service
