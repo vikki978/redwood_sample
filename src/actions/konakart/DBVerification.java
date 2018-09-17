@@ -24,14 +24,14 @@ class DBVerification{
         String actualValue = "";
 		while (rs.next()) {
 			for (int i = 1; i <= columnsNumber; i++) {
-                if(i==2)
+               if(rs.getString(i).equalsIgnoreCase(params.get("uiValue")))
                 {
                    actualValue = rs.getString(i);
                    break;
                 }
 			}
         }
-        System.out.println("DB Data: "+actualValue);
+        System.out.println("DB Data Value: "+actualValue);
         assertEquals(params.get("uiValue"),actualValue);
 		rs.close();
 		conn.close();
